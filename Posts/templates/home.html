@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block section %}
+    <div class="left-section">
+        <div class="option">
+          <div class="option-image">
+            <img src="static user.profile_picture" alt="">
+          </div>
+          <div class="option-name">
+            <span>{{ user.username }}</span>
+          </div>
+        </div>
+      
+    </div>
+    
+    <div class="middle-section">
+      <div class="post-new">
+        <form action="" method="post">
+          <div class="top">
+            <img src="static user.profile_picture" alt="">
+            <input name="new-post-content" type="text" placeholder="What's on your mind ?">
+          </div>
+          <div class="bottom">
+            <input type="submit" value="post">
+          </div>
+        </form>
+      </div>
+      
+      <!-- Post Card -->
+      {% for post in post_list %}
+      <div class="post">
+        <div class="top">
+          <div class="left">
+            <img src="static user.profile_picture" alt="">
+          </div>
+          <div class="middle">
+            <div class="profile-name">
+              {{ post.author.username }}
+            </div>
+            <div class="post-time">
+              {{ post.pub_date }}
+            </div>
+          </div>
+          <div class="right">
+            {% if post.author == user %}
+                <a href="">Delete</a>
+                <a href="">Edit</a>
+            {% endif %}
+          </div>
+        </div>
+        <div class="post-middle">
+          {{ post.content }}
+        </div>
+      </div>
+      {% endfor %}
+      <!-- End Post Card -->
+      
+    </div>  
+    <div class="right-section">
+      <div class="title">
+        <div class="right">
+          <span>Contacts</span>
+        </div>
+      </div>
+      <!-- Friends Card -->
+      <div class="option">
+          <div class="option-image">
+            <img src="static friend.profile_picture" alt="">
+          </div>
+          <div class="option-name">
+            <span>friend.username</span>
+          </div>
+        </div>
+      <!-- End Friends Card -->
+      
+    </div>
+{% endblock section %}
