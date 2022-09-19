@@ -2,16 +2,18 @@
 <html>
   <head>
     <title>HeadBook | Home</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home-style.css' %}" />
   </head>
   <body>
     <header>
       <content>
         <div class="left">
-            <a href=""><img class="header-logo" src="{% static 'logo.png' %}" alt="s"></a>
-            <input class="header-search" type="text" placeholder="Search">
+          <a href=""
+            ><img class="header-logo" src="{% static 'logo.png' %}" alt="s"
+          /></a>
+          <input class="header-search" type="text" placeholder="Search" />
         </div>
-        
+
         <div class="center">
           <ul>
             <li><a href="">Home</a></li>
@@ -20,7 +22,7 @@
             <li><a href="">Gaming</a></li>
           </ul>
         </div>
-        
+
         <div class="right">
           <ul>
             <li><a href="">Menu</a></li>
@@ -30,9 +32,6 @@
         </div>
       </content>
     </header>
-    <section>
-        {% block section %}
-        {% endblock section %}
-    </section>
-</body>
+    <section>{% block section %} {% endblock section %}</section>
+  </body>
 </html>
