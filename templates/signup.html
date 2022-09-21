@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" class="m-auto d-flex flex-column justify-content-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 p-4 shadow">
+            <div class="form-title py-3">
+              <h2 class="fw-bolder">Sign Up</h2>
+              <h5 class="text-muted fs-6">It's quick and easy.</h5>
+            </div>
+            <div class="inputs d-flex flex-column">
+              <div class="row gx-3">
+                <div class="col-md-6">
+                  <input
+                    type="text"
+                    placeholder="First name"
+                    class="w-100 p-2 my-1"
+                    required
+                  />
+                </div>
+                <div class="col-md-6">
+                  <input
+                    type="text"
+                    placeholder="Surname"
+                    class="w-100 p-2 my-1"
+                    required
+                  />
+                </div>
+              </div>
+
+              <input
+                type="email"
+                placeholder="Mobile number or email address"
+                class="w-100 p-2 my-2"
+                required
+              />
+              <input
+                type="password"
+                placeholder="New password"
+                class="w-100 p-2 my-2"
+                required
+              />
+            </div>
+            <span class="fs-6 text-muted d-block mb-2">Gender?</span>
+            <div class="gender d-flex">
+              <div
+                class="femal d-flex align-items-center justify-content-between"
+              >
+                <label for="femal">Female</label>
+                <input
+                  type="radio"
+                  id="femal"
+                  name="fav_language"
+                  value="HTML"
+                />
+              </div>
+              <div
+                class="male d-flex align-items-center justify-content-between mx-3"
+              >
+                <label for="male">Male</label>
+                <input
+                  type="radio"
+                  id="male"
+                  name="fav_language"
+                  value="CSS"
+                  checked="checked"
+                />
+              </div>
+
+              <div
+                class="custom d-flex align-items-center justify-content-between"
+              >
+                <label for="custom">Custom</label>
+                <input
+                  type="radio"
+                  id="custom"
+                  name="fav_language"
+                  value="CSS"
+                  checked="checked"
+                />
+              </div>
+            </div>
+            <div class="paragraph text-muted d-flex flex-column">
+              <p class="py-2">
+                People who use our service may have uploaded your contact
+                information to Facebook
+                <a href="" class="text-decoration-none">Learn more.</a>
+              </p>
+              <p>
+                By clicking Sign Up, you agree to our Terms,
+                <a href="" class="text-decoration-none"> Privacy Policy</a> and
+                Cookies Policy. You may receive SMS notifications from us and
+                can opt out at any time.
+              </p>
+              <button class="btn btn-success">Sign Up</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <script src="js/all.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
