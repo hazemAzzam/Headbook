@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from .views import home, add_post, delete_post
+from .views import *
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -24,5 +24,7 @@ urlpatterns = [
     path("", home, name='home'),
     path("post/", add_post, name="add_post"),
     path('delete-post/<int:pk>', delete_post, name="delete_post"),
-    path("account", include("django.contrib.auth.urls"))
+    path("account", include("django.contrib.auth.urls")),
+    path('login/', login_user, name='login'),
+    path("signup/", SignUpView.as_view(), name='signup')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

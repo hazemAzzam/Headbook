@@ -1,6 +1,9 @@
 from django.shortcuts import render,redirect
-
 from posts.models import Post
+from django.contrib.auth import login, logout, authenticate
+from accounts.forms import *
+from django.urls import reverse_lazy
+from django.views.generic import CreateView
 
 def home(request):
     user = request.user
@@ -26,3 +29,21 @@ def delete_post(request, pk):
 
 
     return redirect('home')
+
+def login_user(request):
+    if request.method == 'POST':
+        phone_number=request.POST["phone_number"]
+        password=request.POST["password"]
+        user = authenticate(request, username=phone_number, password=password)
+        print(user.first_name)
+        if user is not None:
+            login(request, user)
+            return redirect('home')
+
+    return render(request, 'login.html')
+
+
+class SignUpView(CreateView):
+    form_class=CustomUserCreationForm
+    success_url = reverse_lazy('login')
+    template_name = "signup.html"
