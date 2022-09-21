@@ -1,0 +1,40 @@
+body{
+    background-color: rgba(128, 128, 128, 0.169);
+}
+.max-width {
+    max-width: 550px;
+}
+.content {
+    margin-top: 200px;
+}
+.login-form {
+    background-color: #fff;
+    border-radius: 10px;
+}
+header img {
+    width: 30%;
+}
+.email {
+    border-radius: 5px;
+    border: 1px solid rgba(128, 128, 128, 0.507);
+    padding: 12px;
+}
+.create {
+    background-color: green;
+    color: #fff;
+    padding: 10px;
+    border-radius: px;
+}
+.Forgotten {
+    position: relative;
+}
+.Forgotten::after {
+    content:'';
+    width: 400px;
+    height: 1px;
+    background-color: rgba(128, 128, 128, 0.413);
+    position: absolute;
+    top: 180%;
+    left: 50%;
+    transform: translate(-50%);
+}
