@@ -1,5 +1,5 @@
 """
-WSGI config for HeadBook project.
+WSGI config for Headbook project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "HeadBook.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Headbook.settings")
 
 application = get_wsgi_application()

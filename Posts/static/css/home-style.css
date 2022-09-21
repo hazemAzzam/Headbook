@@ -8,6 +8,7 @@
   html{
     width: 100%;
     height: 100%;
+    font-family: sans-serif;
   }
   body{
       background: #18191A;
@@ -44,7 +45,8 @@
   }
   body header content ul li{
     margin-left: 10px;
-    width: 110px;
+    width: auto;
+    min-width: 100px;
     margin: auto;
     text-align: center;
     overflow: hidden;
@@ -101,6 +103,7 @@
     height: 50px;
     width: 50px;
     margin: auto;
+    border-radius: 25px;
   }
   body section .left-section .option .option-name {
     height: 90%;
@@ -128,6 +131,7 @@
     width: 50px;
     height: 50px;
     margin-right: 10px;
+    border-radius: 25px;
   }
   body section .middle-section .post-new .top input{
     background: #3A3B3C;
@@ -135,6 +139,7 @@
     height: 50px;
     border-radius: 25px;
     border: 0px;
+    padding: 10px;
   }
   body section .middle-section .post-new input{
     width: 100%;
@@ -163,6 +168,7 @@
     width: 50px;
     height: 50px;
     margin: auto;
+    border-radius: 25px;
   }
   body section .middle-section .post .top .middle {
     width: 100%;
@@ -216,6 +222,7 @@
     width: 50px;
     height: 50px;
     margin: auto;
+    border-radius: 25px;
   }
   body section .right-section .option .option-name {
     display: flex;
