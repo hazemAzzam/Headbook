@@ -6,7 +6,7 @@
             <img class="small-profile-picture" src="/media/{{ user.profile_picture.name }}" alt="">
           </div>
           <div class="option-name">
-            <span>{{ user.first_name }} {{ user.last_name }} </span>
+            <span>{{ user }}</span>
           </div>
         </div>
       
@@ -31,18 +31,18 @@
       <div class="post">
         <div class="top">
           <div class="left">
-            <img class="small-profile-picture" src="/media/{{ user.profile_picture.name }}" alt="">
+            <img class="small-profile-picture" src="/media/{{ post.account.profile_picture }}" alt="">
           </div>
           <div class="middle">
             <div class="profile-name">
-              {{ post.author.first_name }} {{ post.author.last_name }} 
+              {{ post.account }}
             </div>
             <div class="post-time">
               {{ post.pub_date }}
             </div>
           </div>
           <div class="right">
-            {% if post.author == user %}
+            {% if post.account == user %}
                 <a href="{% url 'delete_post' post.id %}">Delete</a>
                 <a href="">Edit</a>
             {% endif %}

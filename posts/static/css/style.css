@@ -187,7 +187,7 @@
     color: #2374E1;
   }
   body section .middle-section .post .post-middle {
-  
+    word-wrap: break-word;
     padding: 10px;
   }
   body section .right-section {

@@ -1,5 +1,4 @@
-from re import L
-from xmlrpc.client import DateTime
+from operator import mod
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.contrib.auth.models import Permission, Group
@@ -33,7 +32,6 @@ class AccountManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-
 class Account(AbstractBaseUser):
     first_name              = models.CharField(max_length=15, verbose_name="First Name", default="")
     last_name               = models.CharField(max_length=15, verbose_name="Last Name", default="")
@@ -42,7 +40,9 @@ class Account(AbstractBaseUser):
     Genders                 = (("MALE", "Male"), ("FEMALE", "Female"))
     gender                  = models.CharField(max_length=10, verbose_name="Gender", default="MALE", blank=False, null=False)
     profile_picture         = models.ImageField(default=f"default.png")
+
     objects                 = AccountManager()
+
     USERNAME_FIELD          = "phone_number"
     REQUIRED_FIELDS         = ["first_name", "last_name", "date_of_birth", "gender"]
 
@@ -57,7 +57,7 @@ class Account(AbstractBaseUser):
     groups                  = models.ManyToManyField(Group)
     
     def __str__(self):
-        return self.phone_number
+        return f"{self.first_name} {self.last_name}"
 
     def has_perm(self, obj=None):
         return self.is_staff
@@ -66,4 +66,10 @@ class Account(AbstractBaseUser):
         return True
 
     
+class Friendship(models.Model):
+    account = models.ForeignKey(Account, on_delete=models.CASCADE, related_name='+', null=True)
+    friend = models.ForeignKey(Account, on_delete=models.CASCADE, null=True)
+    friendship_date = models.DateField(auto_now=True, blank=True)
 
+    def __str__(self):
+        return f"({self.account}) and ({self.friend})"
