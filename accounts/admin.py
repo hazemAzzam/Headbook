@@ -10,7 +10,7 @@ from .forms import *
 
 class CustomUserAdmin(BaseUserAdmin):
     fieldsets= (
-        (None, {"fields": ('first_name', 'last_name', 'phone_number', 'date_of_birth', 'gender', 'is_staff', 'is_superuser')}),
+        (None, {"fields": ('first_name', 'last_name', 'phone_number', 'date_of_birth', 'gender', 'profile_picture', 'is_staff', 'is_superuser')}),
     )
 
     add_fieldsets = (

@@ -1,16 +1,18 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/all.min.css" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/signup-style.css' %}" />
     <title>Document</title>
   </head>
   <body>
-    <form action="" class="m-auto d-flex flex-column justify-content-center">
+    <form action="{% url 'signup' %}" method='POST' class="m-auto d-flex flex-column justify-content-center">
+      {% csrf_token %}
       <div class="container">
         <div class="row">
           <div class="col-md-8 p-4 shadow">
@@ -22,32 +24,40 @@
               <div class="row gx-3">
                 <div class="col-md-6">
                   <input
+                    name="first_name"
                     type="text"
                     placeholder="First name"
                     class="w-100 p-2 my-1"
+                    autocomplete="off"
                     required
                   />
                 </div>
                 <div class="col-md-6">
                   <input
+                    name="last_name"
                     type="text"
                     placeholder="Surname"
                     class="w-100 p-2 my-1"
+                    autocomplete="off"
                     required
                   />
                 </div>
               </div>
 
               <input
-                type="email"
+                name="phone_number"
+                type="text"
                 placeholder="Mobile number or email address"
                 class="w-100 p-2 my-2"
+                autocomplete="off"
                 required
               />
               <input
+                name="password"
                 type="password"
                 placeholder="New password"
                 class="w-100 p-2 my-2"
+                autocomplete="off"
                 required
               />
             </div>
@@ -56,12 +66,13 @@
               <div
                 class="femal d-flex align-items-center justify-content-between"
               >
-                <label for="femal">Female</label>
+                <label for="female">Female</label>
                 <input
+                  name="female"
                   type="radio"
-                  id="femal"
+                  id="female"
                   name="fav_language"
-                  value="HTML"
+                  value="female"
                 />
               </div>
               <div
@@ -69,11 +80,11 @@
               >
                 <label for="male">Male</label>
                 <input
+                  name="male"
                   type="radio"
                   id="male"
                   name="fav_language"
-                  value="CSS"
-                  checked="checked"
+                  value="male"
                 />
               </div>
 
@@ -82,11 +93,11 @@
               >
                 <label for="custom">Custom</label>
                 <input
+                  name="custom"
                   type="radio"
                   id="custom"
                   name="fav_language"
                   value="CSS"
-                  checked="checked"
                 />
               </div>
             </div>
@@ -102,15 +113,11 @@
                 Cookies Policy. You may receive SMS notifications from us and
                 can opt out at any time.
               </p>
-              <button class="btn btn-success">Sign Up</button>
+              <input class="btn btn-success" type="submit" value="Signup">
             </div>
           </div>
         </div>
       </div>
     </form>
-
-    <script src="js/all.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/script.js"></script>
   </body>
 </html>
