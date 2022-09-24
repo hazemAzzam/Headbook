@@ -12,7 +12,7 @@
             ><img class="header-logo" src="{% static 'logo.png' %}" alt="s"
           /></a>
           <input class="header-search" type="text" placeholder="Search" />
-        </div>
+        </div> 
 
         <div class="center">
           <ul>
@@ -32,6 +32,10 @@
         </div>
       </content>
     </header>
-    <section>{% block section %} {% endblock section %}</section>
+    <section>
+      {% block section %} 
+      {% endblock section %}
+    </section>
   </body>
+  <script src="{% static 'js/home.js' %}"></script>
 </html>

@@ -13,7 +13,7 @@ class AccountManager(BaseUserManager):
             gender=gender,
         )
         user.set_password(password)
-
+        user.full_name = f"{first_name} {last_name}"
         user.save(using=self._db)
 
         return user
@@ -33,6 +33,7 @@ class AccountManager(BaseUserManager):
         return user
 
 class Account(AbstractBaseUser):
+    full_name               = models.CharField(max_length=30, null=True)
     first_name              = models.CharField(max_length=15, verbose_name="First Name", default="")
     last_name               = models.CharField(max_length=15, verbose_name="Last Name", default="")
     phone_number            = models.CharField(max_length=11, verbose_name="Phone Number", default="", blank=False, null=False, unique=True)
@@ -57,7 +58,7 @@ class Account(AbstractBaseUser):
     groups                  = models.ManyToManyField(Group)
     
     def __str__(self):
-        return f"{self.first_name} {self.last_name}"
+        return f"{self.full_name}"
 
     def has_perm(self, obj=None):
         return self.is_staff

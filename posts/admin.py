@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from posts.models import Post, Comment
-
+from .forms import *
 
 class PostAdmin(UserAdmin):
 
@@ -24,13 +24,16 @@ class PostAdmin(UserAdmin):
             },
         ),
     )
+    form=CustomPostChangeForm
+    add_form=CustomPostCreationForm
     list_display = ('account', 'content', 'pub_date')
     list_filter = ()
     search_fields=('account',)
     ordering = ('pub_date',)
     filter_horizontal = ()
 
-admin.site.register(Post, PostAdmin)
+
+admin.site.register(Post)
 
 
 class CommentAdmin(UserAdmin):
@@ -60,4 +63,6 @@ class CommentAdmin(UserAdmin):
     search_fields=('account',)
     ordering = ('pub_date',)
     filter_horizontal = ()
-admin.site.register(Comment, CommentAdmin)
+
+
+admin.site.register(Comment)

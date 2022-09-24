@@ -4,11 +4,15 @@
   font-size: 25px;
   text-decoration: none;
   color: white;
+  transition: 0.2s;
+}
+img{
+border-radius: 25px;
 }
 html{
   width: 100%;
   height: 100%;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: sans-serif;
 }
 body{
     background: #18191A;
@@ -37,6 +41,14 @@ body header content .left .header-logo {
 }
 body header content .left .header-search {
   margin:auto;
+  height: 40px;
+  font-size: 20px;
+  padding: 5px;
+  margin-left: 10px;
+  background: #3A3B3C;
+  border: 0px;
+  border-radius: 25px;
+  font-size: 20px;
 }
 body header content ul {
   height: 100%;
@@ -45,7 +57,7 @@ body header content ul {
 }
 body header content ul li{
   margin-left: 10px;
-  width: 110px;
+  min-width: 110px;
   margin: auto;
   text-align: center;
   overflow: hidden;
@@ -61,15 +73,8 @@ body header content ul li a {
   align-items: center;
   margin: auto;
 }
-body header content .left input {
-  height: 35px;
-  background: #3A3B3C;
-  border: 0px;
-  border-radius: 25px;
-  font-size: 20px;
-}
 input:focus {
-  outline: none;
+  background: #2374E1;
 }
 
 body section {
@@ -106,6 +111,7 @@ body section .left-section .option .option-image img {
 body section .left-section .option .option-name {
   height: 90%;
   display: flex;
+  padding-left: 5px;
 }
 body section .left-section .option .option-name span {
   align-self: center;
@@ -133,9 +139,12 @@ body section .middle-section .post-new .top img{
 body section .middle-section .post-new .top input{
   background: #3A3B3C;
   width: 90%;
-  height: 50px;
+  height: 45px;
   border-radius: 25px;
   border: 0px;
+  padding: 10px;
+  font-size: 20px;
+  margin: auto;
 }
 body section .middle-section .post-new input{
   width: 100%;
@@ -167,12 +176,15 @@ body section .middle-section .post .top .left img {
 }
 body section .middle-section .post .top .middle {
   width: 100%;
-  height: 60px;
+  height: 55px;
+  margin: auto;
   display: block;
+  padding-left: 5px;
 }
 body section .middle-section .post .top .middle div {
   font-size: 20px;
   margin: auto;
+  display: flex;
   color: gray;
 }
 body section .middle-section .post .top .right {
@@ -188,7 +200,8 @@ body section .middle-section .post .top .right a:hover {
   color: #2374E1;
 }
 body section .middle-section .post .post-middle {
-  word-wrap: break-word;
+  margin-top: 5px;
+  margin-bottom: 5px;
   padding: 10px;
 }
 body section .right-section {
@@ -197,8 +210,7 @@ body section .right-section {
   display: block;
 }
 body section .right-section .title {
-  height: 5%;
-
+  height: 30px;
   width: 100%;
 }
 body section .right-section .title .right span{
@@ -226,4 +238,99 @@ body section .right-section .option .option-name {
 }
 body section .right-section .option .option-name span {
   margin: auto;
+}
+.line{
+background-color: gray;
+border:none;
+width: 100%;
+height: 1px;
+}
+.post-buttons{
+display: grid;
+grid-template-columns: auto auto auto;
+}
+.post-button{
+background: #242526;
+border: 0px;
+border-radius: 10px;
+height: 40px;
+}
+.post-button:hover{
+background: #3A3B3C;
+}
+.write-comment {
+display: grid;
+grid-template-columns: 60px auto;
+width: 100%;
+height: auto;
+}
+.comment-img-container{
+width: 60px;
+height: 60px;
+display: flex;
+
+}
+.commenter-profile-img{
+width: 50px;
+height: 50px;
+margin: auto;
+border-radius: 25px;
+
+}
+.comment-content-container{
+position:relative;
+display: flex;
+align-items: center;
+}
+.comment-content-container .comment{
+grid:auto;
+height: 40px;
+
+width: 98%;
+margin-left: 5px;
+border-radius: 25px;
+background: #3A3B3C;
+padding-left: 10px;
+padding-top: 5px;
+font-size: 20px;
+word-wrap: break-word;
+overflow: hidden;
+}
+.post-comment{
+position: absolute;
+height: 20px;
+width: 20px;
+right: 10px;
+bottom: auto;
+background: #2374E1;
+}
+.view-comments {
+width: 100%;
+height: auto; /*    auto */
+display: grid;
+grid-template-columns: 60px 89%;
+align-items: center;
+}
+.view-comment-profile-picture-container{
+width: 60px;
+height: 60px;
+margin-left: 5px;
+display: flex;
+}
+.view-comment-profile-picture{
+margin:auto;
+width: 50px;
+height: 50px;
+}
+.view-comment-profile-name{
+font-size: 20px;
+font-weight: 400;
+}
+.view-comment-content{
+word-wrap: break-word;
+font-size: 20px;
+font-weight: 1;
+margin-left: 5px;
+background: #3A3B3C;  
+border-radius: 15px;
 }

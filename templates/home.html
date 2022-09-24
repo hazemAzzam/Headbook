@@ -26,34 +26,7 @@
         </form>
       </div>
       
-      <!-- Post Card -->
-      {% for post in post_list %}
-      <div class="post">
-        <div class="top">
-          <div class="left">
-            <img class="small-profile-picture" src="/media/{{ post.account.profile_picture }}" alt="">
-          </div>
-          <div class="middle">
-            <div class="profile-name">
-              {{ post.account }}
-            </div>
-            <div class="post-time">
-              {{ post.pub_date }}
-            </div>
-          </div>
-          <div class="right">
-            {% if post.account == user %}
-                <a href="{% url 'delete_post' post.id %}">Delete</a>
-                <a href="">Edit</a>
-            {% endif %}
-          </div>
-        </div>
-        <div class="post-middle">
-          {{ post.content }}
-        </div>
-      </div>
-      {% endfor %}
-      <!-- End Post Card -->
+      {% include 'post.html' %}
       
     </div>  
     <div class="right-section">

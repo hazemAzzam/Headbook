@@ -10,7 +10,7 @@ from .forms import *
 
 class AccountAdmin(UserAdmin):
     fieldsets= (
-        (None, {"fields": ('first_name', 'last_name', 'phone_number', 'date_of_birth', 'gender', 'profile_picture', 'is_staff', 'is_superuser')}),
+        (None, {"fields": ('full_name', 'first_name', 'last_name', 'phone_number', 'date_of_birth', 'gender', 'profile_picture', 'is_staff', 'is_superuser')}),
     )
 
     add_fieldsets = (
@@ -23,10 +23,10 @@ class AccountAdmin(UserAdmin):
         ),
     )
 
-    #form=CustomUserChangeForm
-    #add_form=CustomUserCreationForm
+    form=CustomUserChangeForm
+    add_form=CustomUserCreationForm
 
-    list_display = ('first_name', 'last_name', 'phone_number', 'date_of_birth', 'gender')
+    list_display = ('full_name', 'first_name', 'last_name', 'phone_number', 'date_of_birth', 'gender')
     list_filter = ('is_staff', 'is_superuser')
     search_fields=('phone_number',)
     ordering = ('phone_number',)

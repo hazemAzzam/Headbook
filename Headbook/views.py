@@ -17,7 +17,8 @@ def add_post(request):
     if request.method == "POST" and request.user.is_authenticated:
         account = request.user
         content = request.POST['new-post-content']
-        Post(account=account, content=content).save()
+        if content != "":
+            Post(account=account, content=content).save()
     return redirect('home')
     
 def delete_post(request, pk):
@@ -25,7 +26,6 @@ def delete_post(request, pk):
         post = Post.objects.get(id=pk)
         print(post)
         if request.user == post.account:
-            print("Deleted")
             post.delete()
 
 

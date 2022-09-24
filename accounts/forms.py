@@ -6,7 +6,7 @@ from django import forms
 class CustomUserCreationForm(UserCreationForm):
     class Meta(UserCreationForm):
         model = Account
-        fields = ('first_name', 'last_name', 'phone_number', 'date_of_birth', 'gender', 'password')
+        fields = ('full_name','first_name', 'last_name', 'phone_number', 'date_of_birth', 'gender', 'password')
 
 class CustomUserChangeForm(UserChangeForm):
     password = ReadOnlyPasswordHashField()
@@ -14,7 +14,7 @@ class CustomUserChangeForm(UserChangeForm):
     class Meta(UserChangeForm):
         model = Account
         #fields=('first_name','last_name',)
-        fields = ('first_name', 'last_name', 'phone_number', 'date_of_birth', 'gender', 'is_active', 'is_staff', 'is_superuser')
+        fields = ('full_name','first_name', 'last_name', 'phone_number', 'date_of_birth', 'gender', 'is_active', 'is_staff', 'is_superuser')
 
 
 class RegistrationForm(UserCreationForm):
