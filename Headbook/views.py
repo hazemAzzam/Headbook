@@ -49,12 +49,7 @@ def signup(request):
         last_name = request.POST["last_name"]
         phone_number = request.POST["phone_number"]
         password = request.POST["password"]
-        gender = 'male'
-        try:
-            gender = request.POST["female"]
-            gender = 'Female'
-        except:
-            gender = 'Male'
+        gender = request.POST['gender']
         
         user = Account.objects.create_user(
             first_name=first_name,
