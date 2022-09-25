@@ -11,7 +11,11 @@
     <title>Document</title>
   </head>
   <body>
-    <form action="{% url 'signup' %}" method='POST' class="m-auto d-flex flex-column justify-content-center">
+    <form
+      action="{% url 'signup' %}"
+      method="POST"
+      class="m-auto d-flex flex-column justify-content-center"
+    >
       {% csrf_token %}
       <div class="container">
         <div class="row">
@@ -68,7 +72,7 @@
               >
                 <label for="female">Female</label>
                 <input
-                  name="female"
+                  name="gender"
                   type="radio"
                   id="female"
                   name="fav_language"
@@ -80,7 +84,7 @@
               >
                 <label for="male">Male</label>
                 <input
-                  name="male"
+                  name="gender"
                   type="radio"
                   id="male"
                   name="fav_language"
@@ -93,7 +97,7 @@
               >
                 <label for="custom">Custom</label>
                 <input
-                  name="custom"
+                  name="gender"
                   type="radio"
                   id="custom"
                   name="fav_language"
@@ -113,7 +117,7 @@
                 Cookies Policy. You may receive SMS notifications from us and
                 can opt out at any time.
               </p>
-              <input class="btn btn-success" type="submit" value="Signup">
+              <input class="btn btn-success" type="submit" value="Signup" />
             </div>
           </div>
         </div>
