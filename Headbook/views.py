@@ -51,15 +51,17 @@ def signup(request):
         password = request.POST["password"]
         gender = request.POST['gender']
         
-        user = Account.objects.create_user(
-            first_name=first_name,
-            last_name=last_name,
-            phone_number=phone_number,
-            password=password,
-            date_of_birth='2000-01-01',
-            gender=gender,
-        )
-        user.save()
-        login(request, user)
-        return redirect('home')
+        
+        if authenticate(request, phone_number=phone_number, password=password) == None:
+            user = Account.objects.create_user(
+                first_name=first_name,
+                last_name=last_name,
+                phone_number=phone_number,
+                password=password,
+                date_of_birth='2000-01-01',
+                gender=gender,
+            )
+            user.save()
+            login(request, user)
+            return redirect('home')
     return render(request, 'signup.html')
